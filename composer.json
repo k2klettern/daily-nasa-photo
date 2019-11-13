@@ -10,5 +10,10 @@
             "name": "Eric Zeidan",
             "email": "k2klettern@gmail.com"
         }
-    ]
+    ],
+    "autoload": {
+        "psr-4": {
+            "Zeidan\\":"src/"
+        }
+    }
 }
