@@ -1,0 +1,14 @@
+{
+    "name": "zeidan/daily-nasa-photo",
+    "description": "Add a daily Nasa Photo in your Project",
+    "type": "wordpress-plugin",
+    "require": {
+        "composer/installers": "v1.0.6"
+    },
+    "authors": [
+        {
+            "name": "Eric Zeidan",
+            "email": "k2klettern@gmail.com"
+        }
+    ]
+}
