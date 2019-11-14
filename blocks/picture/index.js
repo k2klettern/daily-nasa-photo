@@ -10,6 +10,8 @@
 
 		title: __( 'Daily Nasa Picture', 'daily-nasa-photo' ),
 
+		icon: 'camera-alt',
+
 		category: 'widgets',
 
 		supports: {

@@ -2,8 +2,6 @@
 
 namespace Zeidan\Controller;
 
-use Zeidan\Controller\DashboardController;
-
 class IndexController
 {
     const NASA_TRANSIENT_NAME = "nasa-picture-data";
@@ -54,6 +52,7 @@ class IndexController
 
     public function initHooks() {
         add_action( 'init', [$this, 'blockEditorAssets']);
+        add_action( 'admin_init', [$this, 'settingsOptionsField']);
     }
 
     public function getPicture(): \stdClass {
@@ -69,6 +68,27 @@ class IndexController
         }
 
         return $picture;
+    }
+
+    public function settingsOptionsField() {
+        register_setting('general', self::OPTION_NASA_FIELD, 'esc_attr');
+        add_settings_field(
+            self::OPTION_NASA_FIELD,
+            'Nasa Daily Picture Token',
+            [$this, 'formSubmitProcessing'],
+            'general',
+            'default',
+            array( 'label_for' => self::OPTION_NASA_FIELD )
+        );
+    }
+
+    public function formSubmitProcessing() {
+        echo "<input type='text' id='" . self::OPTION_NASA_FIELD . "' name='" . self::OPTION_NASA_FIELD . "' ";
+        if(get_option(self::OPTION_NASA_FIELD)) {
+            echo "value='" . get_option(self::OPTION_NASA_FIELD) . "' ";
+        }
+        echo " />";
+        echo "<p>Visit <a href='https://api.nasa.gov' target='_blank'>https://api.nasa.gov</a> to get a free Api Key Token</p>";
     }
 
     public function blockEditorAssets() {
