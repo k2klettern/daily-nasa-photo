@@ -8,6 +8,9 @@ $message = isset($_REQUEST['message']) ? $_REQUEST['message'] : "";
 ?>
 
 	<div id="ezdev-token" class="inside">
+        <?php if(!get_option(IndexController::OPTION_NASA_FIELD)) { ?>
+            <p><?= _('To get a token for free pls. visit', 'nasa_plugin') ?> <a href="https://api.nasa.gov/#signUp" target="_blank">https://api.nasa.gov</a></p>
+        <?php } ?>
 		<form action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="post" class="initial-form hide-if-no-js">
 			<div class="input-text-wrap" id="title-wrap">
 				<label for="token">NASA Api Token</label>

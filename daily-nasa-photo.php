@@ -16,3 +16,5 @@ define('DAILY_NASA_PLUGINS_PATH', __DIR__);
 
 new IndexController();
 new DashboardController();
+
+//require_once __DIR__ . '/blocks/picture.php';

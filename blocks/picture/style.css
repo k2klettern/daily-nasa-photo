@@ -1,0 +1,22 @@
+.wp-block-daily-nasa-photo-picture {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	justify-content: center;
+	background-color: #000;
+	color: #fff;
+	padding: 2px;
+}
+
+.ndp-image {
+	order: 2;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	padding: 10px;
+}
+
+.ndp-title {
+	padding-top: 10px;
+	order: 2;
+}

@@ -1,0 +1,10 @@
+.wp-block-daily-nasa-photo-picture {
+	border: 1px dotted #f00;
+}
+
+.ndp-image-edit {
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	min-height: 25vw;
+}
