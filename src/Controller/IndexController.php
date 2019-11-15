@@ -7,6 +7,7 @@ class IndexController
     const NASA_TRANSIENT_NAME = "nasa-picture-data";
     const OPTION_NASA_FIELD = "nasa-api-token";
     const HAFTDAY_IN_SECONDS     = 43600;
+    const QUARTER_OF_A_DAY_IN_SECONDS = 21600;
     protected $token;
     protected $url;
 
@@ -62,7 +63,7 @@ class IndexController
             if (is_array($response)) {
                 $picture = json_decode($response['body']);
                 if (!isset($picture->code)) {
-                    set_transient(self::NASA_TRANSIENT_NAME, $picture, self::HAFTDAY_IN_SECONDS);
+                    set_transient(self::NASA_TRANSIENT_NAME, $picture, self::QUARTER_OF_A_DAY_IN_SECONDS);
                 }
             }
         }
