@@ -3,8 +3,8 @@
 	flex-wrap: wrap;
 	flex-direction: column;
 	justify-content: center;
-	background-color: #000;
-	color: #fff;
+	background-color: #fff;
+	color: #0a0b0d;
 	padding: 2px;
 }
 
@@ -13,10 +13,10 @@
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
-	padding: 10px;
+	padding: 5px;
 }
 
 .ndp-title {
-	padding-top: 10px;
-	order: 2;
+	padding-top: 2px;
+	order: 0;
 }

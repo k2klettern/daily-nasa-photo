@@ -131,9 +131,29 @@ class IndexController
         register_block_type( 'daily-nasa-photo/picture', array(
             'editor_script' => 'picture-block-editor',
             'editor_style'  => 'picture-block-editor',
-            'style'         => 'picture-block'
+            'style'         => 'picture-block',
+            'render_callback' => [$this, 'dailyNasaPhotoRender']
         ) );
 
     }
 
+	public function dailyNasaPhotoRender($attributes, $content) {
+		if ( is_feed() ) {
+			return $content;
+		}
+		wp_enqueue_script('picture-block');
+
+		if($picture = get_transient(IndexController::NASA_TRANSIENT_NAME)) {
+			$copyright = isset($picture->copyright) ? $picture->copyright : "";
+			$render = '<div class="wp-block-daily-nasa-photo-picture"><h3>' . _('Today\'s Picture', 'nasa_plugin') . '</h3>';
+			$render .= '<p><a href="' . $picture->hdurl . '" target="_blank"><img src="'. $picture->url .'" class="ndp-image" width="100%"></a></p>';
+			$render .= '<hr>';
+			$render .= '<h2 class="ndp-title">' . $picture->title . '</h2>';
+			$render .= '<p>&copy; '. $copyright . '</p>';
+			$render .= '<p>'. $picture->explanation .'</p>';
+			$render .= '</div>';
+		}
+
+		return $render;
+	}
 }

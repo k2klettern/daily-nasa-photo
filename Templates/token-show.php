@@ -12,7 +12,7 @@ $message = isset($_REQUEST['message']) ? $_REQUEST['message'] : "";
         <p><a href="<?= $picture->hdurl; ?>" target="_blank"><img src="<?= $picture->url; ?>" width="100%"></a></p>
         <hr>
         <h2><?= $picture->title ?></h2>
-        <p>&copy; <?= $picture->copyright ?></p>
+        <p>&copy; <?php isset($picture->copyright) ? $picture->copyright : "" ?></p>
         <p><?= $picture->explanation ?></p>
     </div>
     <?php } ?>
