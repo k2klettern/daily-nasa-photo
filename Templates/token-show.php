@@ -3,7 +3,7 @@
 /*
  * Template Name: Nasa Token Page
  */
-use Zeidan\Controller\IndexController;
+use Zeidan\DailyNasaPhoto\Controller\IndexController;
 
 $message = isset($_REQUEST['message']) ? $_REQUEST['message'] : "";
 ?>

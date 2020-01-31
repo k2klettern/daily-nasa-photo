@@ -8,10 +8,8 @@ Author: Eric Zeidan
 Author URI: http://zeidan.info
 */
 
-require_once __DIR__ . '/vendor/autoload.php';
-
-use Zeidan\Controller\IndexController;
-use Zeidan\Controller\DashboardController;
+use Zeidan\DailyNasaPhoto\Controller\IndexController;
+use Zeidan\DailyNasaPhoto\Controller\DashboardController;
 
 new IndexController();
 new DashboardController();

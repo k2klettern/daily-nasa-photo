@@ -1,6 +1,6 @@
 <?php
 
-namespace Zeidan\Controller;
+namespace Zeidan\DailyNasaPhoto\Controller;
 
 class IndexController
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace Zeidan\Controller;
+namespace Zeidan\DailyNasaPhoto\Controller;
 
-use Zeidan\Controller\IndexController;
+use Zeidan\DailyNasaPhoto\Controller\IndexController;
 
 class DashboardController
 {
