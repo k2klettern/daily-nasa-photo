@@ -151,7 +151,7 @@ class IndexController
         if ($picture = get_transient(IndexController::NASA_TRANSIENT_NAME)) {
             $copyright = isset($picture->copyright) ? $picture->copyright : "";
             $render = '<div class="wp-block-daily-nasa-photo-picture">';
-            $render .= '<h3>' . _('Today\'s Picture', 'nasa_plugin') . '</h3>';
+            $render .= '<h3>' . __('Today\'s Picture', 'nasa_plugin') . '</h3>';
             $render .= '<p><a href="' . $picture->hdurl . '" target="_blank">';
             $render .= '<img src="' . $picture->url . '" class="ndp-image" width="100%"></a></p>';
             $render .= '<hr>';
